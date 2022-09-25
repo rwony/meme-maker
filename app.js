@@ -1,9 +1,42 @@
+const color = document.getElementById("color");
+const lineWidth = document.getElementById("line-width");
 const canvas = document.querySelector("canvas");
 const ctx = canvas.getContext("2d");
 canvas.width = 800;
 canvas.height = 800;
-ctx.lineWidth = 2;
+ctx.lineWidth = lineWidth.value;
 
-ctx.moveTo(200, 200);
-ctx.lineTo(400, 400);
-ctx.stroke();
+let isPainting = false;
+
+function onMove(event) {
+  if (isPainting) {
+    ctx.lineTo(event.offsetX, event.offsetY);
+    ctx.stroke();
+    return;
+  }
+
+  ctx.moveTo(event.offsetX, event.offsetY);
+}
+function startPainting(event) {
+  isPainting = true;
+}
+function cancelPainting(event) {
+  ctx.beginPath();
+  isPainting = false;
+}
+function onLineWidthChange(event) {
+  ctx.lineWidth = event.target.value;
+}
+function onColorChange(event) {
+  console.log(event.target.value);
+  ctx.fillStyle = event.target.value;
+  ctx.strokeStyle = event.target.value;
+}
+
+canvas.addEventListener("mousemove", onMove);
+canvas.addEventListener("mousedown", startPainting);
+canvas.addEventListener("mouseup", cancelPainting);
+canvas.addEventListener("mouseleave", cancelPainting);
+
+lineWidth.addEventListener("change", onLineWidthChange);
+color.addEventListener("change", onColorChange);
