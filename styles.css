@@ -1,17 +1,101 @@
+@import "reset.css";
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Noto+Sans+KR&display=swap");
+
+body {
+  box-sizing: border-box;
+  background-color: #ececec;
+  font-family: "Inter", sans-serif;
+}
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  justify-content: center;
+}
+
+.canvas-area {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
 canvas {
   width: 800px;
   height: 800px;
-  border: 5px solid #000;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 8px 8px 21px #bebebe, -8px -8px 21px #ffffff;
 }
 
-body {
+.btns {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.color-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
   align-items: center;
 }
 
 .color-option {
   width: 50px;
   height: 50px;
+  border-radius: 50%;
   cursor: pointer;
+  border: 4px solid #fff;
+  transition: transform ease-in-out 0.1s;
+  box-shadow: 4px 4px 6px #bebebe, -5px -5px 23px #ffffff;
+}
+
+.color-option:hover {
+  transform: scale(1.2);
+}
+
+input#color {
+  background-color: #fff;
+}
+
+button,
+label {
+  all: unset;
+  height: 20px;
+  padding: 10px 0;
+  text-align: center;
+  background-color: #0060df;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 10px;
+  font-size: 14px;
+  letter-spacing: 1px;
+  transition: opacity linear 0.1s;
+  box-shadow: 4px 4px 6px #bebebe, -5px -5px 23px #ffffff;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+input#file {
+  display: none;
+}
+
+input#text {
+  all: unset;
+  padding: 10px 0;
+  text-align: center;
+  border-radius: 10px;
+  font-weight: 500;
+  background-color: #fff;
+}
+
+.author {
+  font-size: 12px;
+  text-align: center;
+  margin-top: 12px;
+  color: #555555;
 }
