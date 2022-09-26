@@ -1,16 +1,18 @@
-const saveBtn = document.getElementById("save");
-const textInput = document.getElementById("text");
-const fileInput = document.getElementById("file");
-const modeBtn = document.getElementById("mode-btn");
-const destroyBtn = document.getElementById("destroy-btn");
-const eraserBtn = document.getElementById("eraser-btn");
 const colorOptions = Array.from(
   document.getElementsByClassName("color-option")
 ); //collection to array
-const color = document.getElementById("color");
-const lineWidth = document.getElementById("line-width");
 const canvas = document.querySelector("canvas");
 const ctx = canvas.getContext("2d");
+
+const color = document.getElementById("color");
+const modeBtn = document.getElementById("mode-btn");
+const destroyBtn = document.getElementById("destroy-btn");
+const eraserBtn = document.getElementById("eraser-btn");
+const lineWidth = document.getElementById("line-width");
+const textInput = document.getElementById("text");
+const fontSize = document.getElementById("font-size");
+const fileInput = document.getElementById("file");
+const saveBtn = document.getElementById("save");
 
 const CANVAS_WIDTH = 800;
 const CANVAS_HEIGHT = 800;
@@ -94,7 +96,7 @@ function onDoubleClick(event) {
   if (text !== "") {
     ctx.save(); // ctx의 현재 상태, 색상, 스타일 등 모든 것을 저장하는 함수
     ctx.lineWidth = 1;
-    ctx.font = "48px serif";
+    ctx.font = fontSize.value + "px serif";
     ctx.fillText(text, event.offsetX, event.offsetY);
 
     // save()와 restore() 사이의 어떤 수정사항도 저장되지 않음.
