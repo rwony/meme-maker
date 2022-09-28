@@ -4,14 +4,18 @@ Painting Board and Meme maker made with VanillaJS
 ### Demo
 [Link](https://elegant-chaja-d656f7.netlify.app/)
 
+### Features
+1. Painting on the board
+2. Fill or Stroke mode
+3. Double-click to add text
+4. Add photo
+
 ### Languages
 * Javascript
 * HTML5
 * CSS3
 
 ### Screenshot
-You can double-click to add text.
-
 ![image](https://user-images.githubusercontent.com/88661435/192247315-16d903a5-19cb-4895-9236-68fee8176570.png)
 ![image](https://user-images.githubusercontent.com/88661435/192248393-bb1d3f26-4193-4337-a453-724ba824ca14.png)
 ![image](https://user-images.githubusercontent.com/88661435/192248771-283aa1f7-f993-477b-b29b-64fe0f9aea3c.png)
